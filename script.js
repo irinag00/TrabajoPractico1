@@ -77,7 +77,7 @@ function reinversion () {
   
 function mostrarDatos (){
   let listado= document.getElementById("historial-tabla");
-  let html= ""; //si o si igualar a "" para no nos tire undefined
+  let html= "";
   for(let dato of datos){
     html += "<tr>" + "<td>" + dato.periodo + "</td>" +  "<td>" + dato.monto.toFixed(2) + "</td>"+ "<td>" + dato.resultado.toFixed(2) + "</td>" + "</tr>";
   }
@@ -90,5 +90,5 @@ btnBorrar = document.getElementById("btnBorrar").addEventListener (("click"), el
   resultados.innerHTML = "";
   listado.innerHTML= "";
   apellido.innerHTML= "";
-  //location.reload();
+  location.reload(); //postdata: no pudimos eliminar los datos de las variables :)
 })

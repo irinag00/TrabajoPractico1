@@ -55,6 +55,8 @@ html{
     scroll-behavior: smooth ;
 }
 body{
+    background-image: url("6465.jpg");
+    background-size:cover;
     width: 100%;
     margin: 0 0 var(--header-height) 0;
     font-family: var(--body-font);
@@ -145,6 +147,7 @@ a{
 table {
 width: 100%;
 text-align: left;
+background-color: #fff;
 }
 th, td {
     padding: 1rem;
@@ -157,3 +160,4 @@ thead {
     color: red;
     display: none;
 }
+
