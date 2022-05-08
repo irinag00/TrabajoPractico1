@@ -79,7 +79,6 @@ header{
     width: 700px;
     display: block;
     align-items: center;
-<<<<<<< HEAD
     margin: 1rem 0 0 1rem;
     margin-left: auto;
     margin-right: auto;
@@ -104,12 +103,6 @@ header{
 ul{
     list-style: none;
     align-items: center;
-=======
-    margin: 0.2rem 0 0 1rem;
-}
-ul{
-    list-style: none;
->>>>>>> edfc48b73d73255049725c66a2aa47228a0009af
 }
 a{
     text-decoration: none;
@@ -118,7 +111,6 @@ a{
     font-size: 12rem;
     color: rgb(66, 121, 66);
     box-shadow: 0 0 15 0;
-<<<<<<< HEAD
 }
 
 #error {
@@ -164,6 +156,4 @@ thead {
 .error {
     color: red;
     display: none;
-=======
->>>>>>> edfc48b73d73255049725c66a2aa47228a0009af
 }

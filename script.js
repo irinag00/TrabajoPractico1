@@ -70,7 +70,6 @@ const btnVolverCalcular = document.getElementById("btnVolverCalcular").addEventL
 }) 
 
 function reinversion () {
-  //periodo ++;
   monto= resultado;
   calcularInversion();
   mostrarDatos ();
