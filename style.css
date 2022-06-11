@@ -156,8 +156,7 @@ thead {
     background-color: rgb(66, 121, 66);
     color: #fff;
 }
-.error {
+span{
     color: red;
-    display: none;
 }
 
