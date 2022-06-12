@@ -1,74 +1,97 @@
 <html lang="es">
 <head>
-    <title>Primer trabajo práctico</title>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">
-    <!-- <script src="script.js" defer></script> -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="main.js"></script>
+  <title>Segundo Trabajo Práctico</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+  <script src="./main.js" defer></script>
 </head>
+
 <body>
   <div id="app">
+    <!-- Tarjeta Ingreso Datos -->
     <div class="card">
-        <i class="uil uil-money-bill-stack icon"></i>
-        <div class="card-body">
-          <h5 class="card-title">Simulador de Inversión</h5>
-          <ul>
-            <li>
-              <label>Nombre: </label>
-              <input class="container" type="text" id="txtNombre" v-model="nombre">
-              <span v-if="!this.nombreCorrecto">*Por favor ingrese un nombre válido*</span>
-            </li>
-            <li>
-              <label>Apellido: </label>
-              <input class="container" type="text" id="txtApellido" v-model="apellido">
-              <span v-if="!this.apellidoCorrecto">*Por favor ingrese un apellido válido*</span>
-            </li>
-            <li>
-              <label>Monto a Invertir: $</label>
-              <input class="container" type="number" id="monto" v-model="monto">
-              <span v-if="!this.montoCorrecto">*Por favor ingrese un monto mayor a $1000.*</span>
-            </li>
-            <li>
-              <label>Cantidad de días a invertir: </label>
-              <input class="container" type="number" id="meses" v-model="cantDias"> 
-              <span v-if="!this.cantDiasCorrecto">*Por favor ingrese un número de días mayor o igual a 30.*</span>
-            </li>
-          </ul>
-          <div class="card-button">
-            <button v-on:click = "comprobarInputs()" type="button" class="btn btn-dark" id="btnCalcular" data-toggle="tooltip" data-placement="bottom" title="Calcular inversión según monto ingresado.">Calcular</button>
-            <button type="button" class="btn btn-dark" id="btnVolverCalcular" data-toggle="tooltip" data-placement="bottom" title="Calcular reintento de inversión.">Reinvertir Capital</button>
-            <button type="button" class="btn btn-dark" id="btnBorrar">Borrar datos</button>
-          </div>
+      <i class="uil uil-money-bill-stack icon"></i>
+      <div class="card-body">
+        <h5 class="card-title">Simulador de Inversión</h5>
+        <ul>
+          <li>
+            <label>Nombre:</label>
+            <input class="container" type="text" id="txtNombre" v-model="nombre">
+            <span v-if="!this.nombreCorrecto">*Por favor ingrese un nombre válido*</span>
+          </li>
+          <li>
+            <label>Apellido:</label>
+            <input class="container" type="text" id="txtApellido" v-model="apellido">
+            <span v-if="!this.apellidoCorrecto">*Por favor ingrese un apellido válido*</span>
+          </li>
+          <li>
+            <label>Monto a invertir: $</label>
+            <input class="container" type="number" id="monto" v-model="monto">
+            <span v-if="!this.montoCorrecto">*Por favor ingrese un monto mayor a 1000*</span>
+          </li>
+          <li>
+            <label>Cantidad de días a invertir:</label>
+            <input class="container" type="number" id="cantDias" v-model="cantDias">
+            <span v-if="!this.cantDiasCorrecto">*Por favor ingrese una cantidad de dias mayor a 30*</span>
+          </li>
+        </ul>
+        <div class="card-button">
+          <button class="button" v-on:Click="cargarInputs(n),
+          validarInputs(),
+          calcularPorcentaje(),
+          calcularResultado(this.monto)">
+          Calcular
+          </button>
+          <button class="button" v-on:Click="cargarInputs(),
+          validarInputs(),
+          calcularPorcentaje(),
+          calcularResultado(this.monto),
+          calcularPlazo()">
+            Reinvertir Capital
+          </button>
+          <button class="button" v-on:Click="borrarDatos()">
+            Borrar datos
+          </button>
         </div>
+      </div>
     </div>
-    <div id="error"></div>
+    <!-- Resultado inversion simple -->
     <div id="resultados">
+      <div id="resultado_inversion" v-if="this.show">
+        <h5>
+          El total a obtener de <b> {{nombre}} {{apellido}}</b> es de <b> $ {{resultado.toFixed(2)}}</b>
+        </h5>
+      </div>
+      <br>
     </div>
-    <div id="historial" >
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Período</th>
-              <th>Monto Inicial</th>
-              <th>Monto Final</th>
-            </tr>
-          </thead>
-          <tbody id="historial-tabla">
-            <td></td>
-          </tbody>
-        </table>
+    <!-- Resultado re inversion -->
+    <div class="Resultado_plazo">
+      <table v-if="this.reinvertir && this.show" border="1">
+        <thead>
+          <tr>
+            <th id="titulos_plazo">Período </th>
+            <th id="titulos_plazo">Monto Inicial </th>
+            <th id="titulos_plazo">Monto Final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="dato in plazo">
+            <th>{{dato.periodo}}</th>
+            <th>{{dato.montoInicial.toFixed(2)}}</th>
+            <th>{{dato.montoFinal.toFixed(2)}}</th>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-  <script>
-    const mountedApp = app.mount('#app');
-  </script>
 </body>
 
 </html>
